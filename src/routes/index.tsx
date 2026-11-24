@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowUpRight,
   Camera,
@@ -26,27 +25,6 @@ import receptionPhoto from "@/assets/wedding-reception.jpg";
 import venuePhoto from "@/assets/wedding-venue.jpg";
 import { weddingDetails } from "@/lib/wedding-details";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Olivia & Daniel | A Garden Wedding Invitation" },
-      {
-        name: "description",
-        content:
-          "Join Olivia and Daniel for a garden wedding at Villa Podere on November 22, 2027. Explore the day’s programme, venue, and gallery.",
-      },
-      { property: "og:title", content: "Olivia & Daniel | A Garden Wedding Invitation" },
-      {
-        property: "og:description",
-        content: "A little invitation to a day filled with flowers, family, and forever.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: WeddingPage,
-});
-
 type Countdown = { days: number; hours: number; minutes: number; seconds: number };
 
 const eventIcons: Record<(typeof weddingDetails.events)[number]["icon"], LucideIcon> = {
@@ -66,7 +44,7 @@ const galleryPhotos = [
   { src: detailPhoto, alt: "Ivory roses and wedding rings" },
 ];
 
-function WeddingPage() {
+export function WeddingPage() {
   const [countdown, setCountdown] = useState<Countdown>({
     days: 0,
     hours: 0,
