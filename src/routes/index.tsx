@@ -19,11 +19,11 @@ import {
 import * as QRCode from "qrcode";
 
 import { Button } from "@/components/ui/button";
-import couplePhoto from "@/assets/wedding-couple.jpg.asset.json";
-import detailPhoto from "@/assets/wedding-details.jpg.asset.json";
-import floralGarland from "@/assets/wedding-florals.jpg.asset.json";
-import receptionPhoto from "@/assets/wedding-reception.jpg.asset.json";
-import venuePhoto from "@/assets/wedding-venue.jpg.asset.json";
+import couplePhoto from "@/assets/wedding-couple.jpg";
+import detailPhoto from "@/assets/wedding-details.jpg";
+import floralGarland from "@/assets/wedding-florals.jpg";
+import receptionPhoto from "@/assets/wedding-reception.jpg";
+import venuePhoto from "@/assets/wedding-venue.jpg";
 import { weddingDetails } from "@/lib/wedding-details";
 
 export const Route = createFileRoute("/")({
@@ -60,10 +60,10 @@ const eventIcons: Record<(typeof weddingDetails.events)[number]["icon"], LucideI
 };
 
 const galleryPhotos = [
-  { src: venuePhoto.url, alt: "The villa and garden prepared for the wedding" },
-  { src: receptionPhoto.url, alt: "Candlelit tables beneath the evening lights" },
-  { src: couplePhoto.url, alt: "Olivia and Daniel together in the garden" },
-  { src: detailPhoto.url, alt: "Ivory roses and wedding rings" },
+  { src: venuePhoto, alt: "The villa and garden prepared for the wedding" },
+  { src: receptionPhoto, alt: "Candlelit tables beneath the evening lights" },
+  { src: couplePhoto, alt: "Olivia and Daniel together in the garden" },
+  { src: detailPhoto, alt: "Ivory roses and wedding rings" },
 ];
 
 function WeddingPage() {
@@ -217,7 +217,7 @@ function WeddingPage() {
             </div>
 
             <figure className="couple-portrait reveal">
-              <img src={couplePhoto.url} alt="A couple sharing a quiet moment in a garden" />
+              <img src={couplePhoto} alt="A couple sharing a quiet moment in a garden" />
             </figure>
 
             <div className="invitation-copy reveal">
@@ -267,7 +267,7 @@ function WeddingPage() {
             </div>
 
             <footer className="column-footer column-footer--photo reveal">
-              <img src={receptionPhoto.url} alt="An intimate candlelit reception at the villa" />
+              <img src={receptionPhoto} alt="An intimate candlelit reception at the villa" />
               <div className="footer-photo-shade" />
               <div className="footer-signoff">
                 <p className="script-heading">With love</p>
@@ -278,7 +278,7 @@ function WeddingPage() {
 
           <section className="invitation-column invitation-column--center" aria-labelledby="program-title">
             <div className="program-intro reveal">
-              <img className="floral-canopy" src={floralGarland.url} alt="White roses and trailing greenery" />
+              <img className="floral-canopy" src={floralGarland} alt="White roses and trailing greenery" />
               <Flower2 className="botanical-mark" size={26} strokeWidth={1.2} aria-hidden="true" />
               <p className="eyebrow">A day to remember</p>
               <h2 id="program-title" className="program-title">
@@ -337,7 +337,7 @@ function WeddingPage() {
             </section>
 
             <section className="quote-section reveal" aria-label="A wedding thought">
-              <img className="quote-florals" src={floralGarland.url} alt="" aria-hidden="true" />
+              <img className="quote-florals" src={floralGarland} alt="" aria-hidden="true" />
               <Quote className="quote-mark" size={26} fill="currentColor" aria-hidden="true" />
               <blockquote>
                 A successful marriage requires falling in love many times, always with the same
@@ -361,7 +361,7 @@ function WeddingPage() {
                 <span />
               </span>
               <figure className="venue-photo">
-                <img src={venuePhoto.url} alt="Villa Podere surrounded by cypress trees and gardens" />
+                <img src={venuePhoto} alt="Villa Podere surrounded by cypress trees and gardens" />
               </figure>
               <p className="script-heading venue-name">{weddingDetails.venue.name}</p>
               <p className="venue-address">
@@ -426,7 +426,7 @@ function WeddingPage() {
             </section>
 
             <section className="thank-you reveal" aria-label="Thank you">
-              <img src={couplePhoto.url} alt="Olivia and Daniel in the garden at golden hour" />
+              <img src={couplePhoto} alt="Olivia and Daniel in the garden at golden hour" />
               <div className="thank-you-shade" />
               <div className="thank-you-copy">
                 <p className="script-heading">Thank you!</p>

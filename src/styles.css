@@ -331,7 +331,7 @@
   display: block;
   border-radius: inherit;
   object-fit: cover;
-  object-position: center 45%;
+  object-position: center 42%;
 }
 
 .script-heading {
@@ -477,8 +477,7 @@
 
 .column-footer--photo > img,
 .thank-you > img {
-  object-fit: cover;
-  object-position: center;
+  object-position: center 48%;
 }
 
 .footer-photo-shade,
@@ -524,6 +523,10 @@
   inset: -34px -30px auto;
   object-fit: cover;
   object-position: top center;
+}
+
+.floral-canopy {
+  object-position: center 15%;
 }
 
 .botanical-mark {
@@ -692,7 +695,7 @@
   display: block;
   margin: 0 auto 11px;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 48%;
 }
 
 .quote-mark {
@@ -729,7 +732,7 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center;
+  object-position: center 48%;
 }
 
 .venue-name {
