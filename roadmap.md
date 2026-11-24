@@ -1,0 +1,3 @@
+- [ ] Build the editorial three-column wedding invitation using the supplied visual reference.
+- [ ] Add editable wedding details, countdown, schedule, venue map link, QR code, and gallery lightbox.
+- [ ] Verify the page on desktop and mobile, run relevant tests, and check preview diagnostics.

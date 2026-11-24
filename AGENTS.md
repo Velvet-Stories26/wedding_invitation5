@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+Keep wedding copy, date, venue, event schedule, and dress palette in `src/lib/wedding-details.ts` so invitation content remains configurable separately from presentation.
