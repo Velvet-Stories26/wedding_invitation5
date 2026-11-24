@@ -1,6 +1,6 @@
 export const weddingDetails = {
   bride: "Akila Antony",
-  groom: "Michael Antony",
+  groom: "Michael ",
   dateISO: "2026-12-22T11:30:00",
   invitation: {
     eyebrow: "The wedding of",
@@ -9,10 +9,10 @@ export const weddingDetails = {
     together: "Together with their families",
     date: "Tuesday, December 22, 2026",
     time: "11:30 AM onwards",
-    church: "St. John Of The Cross Church, Siluvaipuram",
+    church: "Villa Podere",
   },
   venue: {
-    name: "St. John Of The Cross Church",
+    name: "Villa Podere",
     address: "Siluvaipuram",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=St.+John+Of+The+Cross+Church+Siluvaipuram",
   },
