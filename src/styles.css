@@ -1012,6 +1012,128 @@
   transition: opacity 450ms ease, transform 450ms ease;
 }
 
+.invitation-letter {
+  min-height: 580px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  isolation: isolate;
+  padding: clamp(30px, 6vw, 72px);
+  border-bottom: 1px solid var(--line);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.invitation-letter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: color-mix(in oklab, var(--forest) 68%, transparent);
+}
+
+.invitation-letter-card {
+  width: min(82%, 520px);
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--antique-gold);
+}
+
+.invitation-letter-eyebrow,
+.invitation-letter-person,
+.invitation-letter-person h2,
+.invitation-letter-person p,
+.invitation-letter-person .invitation-letter-parents,
+.invitation-letter-details,
+.invitation-letter-details > p,
+.invitation-letter-time,
+.invitation-letter-church {
+  color: var(--antique-gold);
+}
+
+.invitation-letter-eyebrow {
+  margin: 0 0 18px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.invitation-letter-person {
+  display: grid;
+  justify-items: center;
+}
+
+.invitation-letter-person h2 {
+  margin: 0;
+  font-family: var(--font-script);
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+  text-shadow: 0 2px 18px rgba(20, 36, 25, 0.45);
+}
+
+.invitation-letter-person p,
+.invitation-letter-person .invitation-letter-parents {
+  margin: 5px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.invitation-letter-person .invitation-letter-parents {
+  max-width: 310px;
+  margin-top: 3px;
+}
+
+.invitation-letter-ampersand,
+.invitation-letter-details svg {
+  color: var(--antique-gold);
+}
+
+.invitation-letter-ampersand {
+  margin: 4px 0;
+  font-family: var(--font-script);
+  font-size: 38px;
+  line-height: 1;
+}
+
+.invitation-letter-details {
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  margin-top: 17px;
+}
+
+.invitation-letter-details > p {
+  margin: 0;
+}
+
+.invitation-letter-details svg {
+  margin: 2px 0 5px;
+}
+
+.invitation-letter-date {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.invitation-letter-time,
+.invitation-letter-church {
+  font-size: 15px;
+}
+
+.invitation-letter-church {
+  max-width: 310px;
+  margin-top: 4px !important;
+  line-height: 1.5;
+}
+
 @media (max-width: 900px) {
   .invitation-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -1096,6 +1218,26 @@
 
   .header-date {
     display: none;
+  }
+
+  .invitation-letter {
+    min-height: 580px;
+    padding: 24px 18px;
+    background-position: center;
+  }
+
+  .invitation-letter-card {
+    width: 94%;
+    min-height: 520px;
+  }
+
+  .invitation-letter-person h2 {
+    font-size: 39px;
+  }
+
+  .invitation-letter-person .invitation-letter-parents,
+  .invitation-letter-church {
+    max-width: 310px;
   }
 
   .invitation-column {

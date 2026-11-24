@@ -23,13 +23,13 @@ import detailPhoto from "@/assets/wedding-details.jpg";
 import floralGarland from "@/assets/wedding-florals.jpg";
 import receptionPhoto from "@/assets/wedding-reception.jpg";
 import venuePhoto from "@/assets/wedding-venue.jpg";
+import invitationBg from "@/assets/invitation-bg.png";
 import { weddingDetails } from "@/lib/wedding-details";
 
 type Countdown = { days: number; hours: number; minutes: number; seconds: number };
 
 const eventIcons: Record<(typeof weddingDetails.events)[number]["icon"], LucideIcon> = {
   rings: Heart,
-  refreshments: Wine,
   ceremony: Flower2,
   photos: Camera,
   banquet: Utensils,
@@ -40,7 +40,7 @@ const eventIcons: Record<(typeof weddingDetails.events)[number]["icon"], LucideI
 const galleryPhotos = [
   { src: venuePhoto, alt: "The villa and garden prepared for the wedding" },
   { src: receptionPhoto, alt: "Candlelit tables beneath the evening lights" },
-  { src: couplePhoto, alt: "Olivia and Daniel together in the garden" },
+  { src: couplePhoto, alt: "Michael Antony and Akila Antony together" },
   { src: detailPhoto, alt: "Ivory roses and wedding rings" },
 ];
 
@@ -169,9 +169,9 @@ export function WeddingPage() {
       <div className="wedding-frame">
         <header className="page-header">
           <div className="header-monogram" aria-hidden="true">
-            <span>O</span>
+            <span>M</span>
             <Heart size={13} fill="currentColor" />
-            <span>D</span>
+            <span>A</span>
           </div>
           <p className="header-label">A garden celebration</p>
           <p className="header-date">{longDate}</p>
@@ -212,17 +212,52 @@ export function WeddingPage() {
               </p>
             </div>
 
-            <div className="date-block reveal">
+            <div className="date-block reveal  mb-5">
               <p className="eyebrow date-eyebrow">Save the date</p>
               <p className="date-large">
                 {weddingDate.getDate()} <span>·</span> {String(weddingDate.getMonth() + 1).padStart(2, "0")} <span>·</span>{" "}
                 {weddingDate.getFullYear()}
               </p>
-              <p className="date-weekday">
+              <p className="date-weekday ">
                 {new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(weddingDate)}
-              </p>
+              </p>   
 
-              <div className="countdown" aria-label="Countdown to the wedding">
+            </div>
+
+               <section
+          className="invitation-letter reveal "
+          aria-label="Wedding invitation letter"
+          style={{ backgroundImage: `url(${receptionPhoto})` }}
+        >
+          <div className="invitation-letter-card">
+            <p className="invitation-letter-eyebrow">{weddingDetails.invitation.eyebrow}</p>
+
+            <div className="invitation-letter-person">
+              <h2>{weddingDetails.groom}</h2>
+              <p>Son of</p>
+              <p className="invitation-letter-parents">{weddingDetails.invitation.groomParents}</p>
+            </div>
+
+            <span className="invitation-letter-ampersand" aria-hidden="true">&amp;</span>
+
+            <div className="invitation-letter-person">
+              <h2>{weddingDetails.bride}</h2>
+              <p>Daughter of</p>
+              <p className="invitation-letter-parents">{weddingDetails.invitation.brideParents}</p>
+            </div>
+
+            <div className="invitation-letter-details">
+              <p>{weddingDetails.invitation.together}</p>
+              <Heart size={14} fill="currentColor" aria-hidden="true" />
+              <p className="invitation-letter-date">{weddingDetails.invitation.date}</p>
+              <p className="invitation-letter-time">{weddingDetails.invitation.time}</p>
+              <p className="invitation-letter-church">{weddingDetails.invitation.church}</p>
+            </div>
+          </div>
+        </section>
+
+          <div className="date-block reveal">
+          <div className="countdown" aria-label="Countdown to the wedding">
                 {([
                   [countdown.days, "days"],
                   [countdown.hours, "hours"],
@@ -242,9 +277,8 @@ export function WeddingPage() {
                 weddingDay={weddingDay}
                 cells={calendarCells}
               />
-            </div>
-
-            <footer className="column-footer column-footer--photo reveal">
+              </div>
+                <footer className="column-footer column-footer--photo reveal">
               <img src={receptionPhoto} alt="An intimate candlelit reception at the villa" />
               <div className="footer-photo-shade" />
               <div className="footer-signoff">
@@ -290,7 +324,7 @@ export function WeddingPage() {
               })}
             </ol>
 
-            <section className="dress-panel reveal" aria-labelledby="dress-code-title">
+             <section className="dress-panel reveal" aria-labelledby="dress-code-title">
               <p className="eyebrow">A note on attire</p>
               <h3 id="dress-code-title" className="dress-title">Dress code</h3>
               <span className="tiny-divider tiny-divider--light" aria-hidden="true">
@@ -404,21 +438,23 @@ export function WeddingPage() {
             </section>
 
             <section className="thank-you reveal" aria-label="Thank you">
-              <img src={couplePhoto} alt="Olivia and Daniel in the garden at golden hour" />
+              <img src={couplePhoto} alt="Michael Antony and Akila Antony" />
               <div className="thank-you-shade" />
               <div className="thank-you-copy">
                 <p className="script-heading">Thank you!</p>
                 <p>We can’t wait to celebrate with you.</p>
-                <Heart size={13} fill="currentColor" aria-hidden="true" />
+                <Heart size={13} fill="currentColor" aria-hidden="true" /><span>With love, {weddingDetails.bride} &amp; {weddingDetails.groom}</span>
+          <span>{longDate}</span>
+
               </div>
             </section>
           </section>
         </div>
 
-        <footer className="page-bottom">
+        {/* <footer className="page-bottom">
           <span>With love, {weddingDetails.bride} &amp; {weddingDetails.groom}</span>
           <span>{longDate}</span>
-        </footer>
+        </footer> */}
       </div>
 
       {activePhoto && lightboxIndex !== null && (
